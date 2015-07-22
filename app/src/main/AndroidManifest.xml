@@ -6,10 +6,9 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-	    android:debuggable="false">
+        android:theme="@style/AppTheme" >
         <activity
-            android:name="be.robinj.base64.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -18,12 +17,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="be.robinj.base64.About"
+            android:name=".About"
             android:label="@string/title_activity_about"
-            android:parentActivityName="be.robinj.base64.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="MainActivity" />
+                android:value="be.robinj.base64.MainActivity" />
         </activity>
     </application>
 
