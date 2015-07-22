@@ -1,6 +1,6 @@
 # Base64 <--> QmFzZTY0
 
-A simple application for encoding/decoding string to/from Base64. 
+A simple application for encoding/decoding strings to/from Base64. 
 Encoding and decoding is done while you're typing; No hitting buttons 
 involved.
 
