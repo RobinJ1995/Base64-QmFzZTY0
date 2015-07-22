@@ -6,6 +6,6 @@ involved.
 
 No distractions, no ads, and no special permission requirements.
 
-# Download
+## Download
 
 * [Google Play Store](https://play.google.com/store/apps/details?id=be.robinj.base64)
