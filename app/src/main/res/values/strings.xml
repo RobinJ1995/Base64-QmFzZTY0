@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Base64 &lt;--> QmFzZTY0</string>
+	<string name="about">About</string>
+	<string name="invalidInput">Invalid input</string>
+	<string name="invalidBase64">Invalid Base64 string</string>
+	<string name="title_activity_about">About</string>
+
+</resources>

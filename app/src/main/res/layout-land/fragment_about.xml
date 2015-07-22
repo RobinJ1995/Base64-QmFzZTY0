@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="be.robinj.base64.About$PlaceholderFragment">
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/imgLogo"
+		android:src="@drawable/ic_launcher"
+		android:minHeight="64dp"
+		android:layout_centerVertical="true"
+		android:layout_centerHorizontal="true"
+		android:paddingBottom="8dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="Base64"
+		android:id="@+id/plain"
+		android:typeface="monospace"
+		android:textSize="32dp"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"
+		android:layout_alignBottom="@+id/imgLogo"
+		android:layout_alignTop="@+id/imgLogo"
+		android:singleLine="false"
+		android:gravity="center_vertical|right"
+		android:layout_toLeftOf="@+id/dev"
+		android:paddingBottom="8dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="QmFzZTY0"
+		android:id="@+id/encoded"
+		android:typeface="monospace"
+		android:textSize="32dp"
+		android:layout_alignTop="@+id/imgLogo"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentEnd="true"
+		android:layout_alignBottom="@+id/imgLogo"
+		android:gravity="center_vertical|left"
+		android:layout_toRightOf="@+id/dev"
+		android:paddingBottom="8dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="{version}"
+		android:id="@+id/version"
+		android:layout_above="@+id/dev"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="4dp"/>
+
+	<Button
+		style="?android:attr/buttonStyleSmall"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Developer"
+		android:id="@+id/dev"
+		android:onClick="btnDev_clicked"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"/>
+</RelativeLayout>
