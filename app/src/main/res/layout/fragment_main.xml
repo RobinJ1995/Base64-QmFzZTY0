@@ -30,16 +30,16 @@
 		android:gravity="center" />
 
 	<EditText
+		android:id="@+id/txtBase64"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:id="@+id/txtBase64"
-		android:layout_below="@+id/imageView"
-		android:layout_marginTop="24dp"
-		android:layout_alignRight="@+id/txtPlain"
 		android:layout_alignEnd="@+id/txtPlain"
 		android:layout_alignParentLeft="true"
 		android:layout_alignParentStart="true"
-		android:text="QmFzZTY0"
+		android:layout_alignRight="@+id/txtPlain"
+		android:layout_below="@+id/imageView"
+		android:layout_marginTop="24dp"
 		android:gravity="center"
-		android:singleLine="true" />
+		android:inputType="textMultiLine"
+		android:text="QmFzZTY0" />
 </RelativeLayout>

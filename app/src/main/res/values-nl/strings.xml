@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="app_name">Base64 &lt;--&gt; QmFzZTY0</string>
+	<string name="app_name">Base64 ⇄ QmFzZTY0</string>
 	<string name="about">Over</string>
 	<string name="invalidInput">Ongeldige invoer</string>
 	<string name="invalidBase64">Ongeldige Base64-invoer</string>

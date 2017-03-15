@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
@@ -57,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
 
 	public static String encode (String str)
 	{
-		return Base64.encodeToString(str.trim().getBytes(), Base64.DEFAULT);
+		return Base64.encodeToString (str.trim ().getBytes(), Base64.DEFAULT).trim ();
 	}
 
 	public static String decode (String str)
@@ -79,78 +80,88 @@ public class MainActivity extends ActionBarActivity {
 		{
 			View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-			final TextView txtPlain = (TextView) rootView.findViewById (R.id.txtPlain);
-			final TextView txtBase64 = (TextView) rootView.findViewById (R.id.txtBase64);
+			final EditText txtPlain = (EditText) rootView.findViewById (R.id.txtPlain);
+			final EditText txtBase64 = (EditText) rootView.findViewById (R.id.txtBase64);
 
 			txtPlain.addTextChangedListener
-				(
-					new TextWatcher ()
+			(
+				new TextWatcher ()
+				{
+					@Override
+					public void beforeTextChanged (CharSequence charSequence, int i, int i2, int i3)
 					{
-						@Override
-						public void beforeTextChanged (CharSequence charSequence, int i, int i2, int i3)
-						{
-							txtPlain.setError (null);
-							txtBase64.setError (null);
-						}
+						txtPlain.setError (null);
+						txtBase64.setError (null);
+					}
 
-						@Override
-						public void onTextChanged (CharSequence charSequence, int i, int i2, int i3)
+					@Override
+					public void onTextChanged (CharSequence charSequence, int i, int i2, int i3)
+					{
+						if (txtPlain.hasFocus ())
 						{
-							if (txtPlain.hasFocus ())
+							try
 							{
-								try
-								{
-									String encoded = MainActivity.encode(charSequence.toString());
-									txtBase64.setText(encoded);
-								}
-								catch (IllegalArgumentException ex)
-								{
-									txtBase64.setError (getString (R.string.invalidInput));
-								}
+								String encoded = MainActivity.encode (charSequence.toString ());
+								txtBase64.setText (encoded);
+							}
+							catch (IllegalArgumentException ex)
+							{
+								txtBase64.setError (getString (R.string.invalidInput));
 							}
 						}
-
-						@Override
-						public void afterTextChanged (Editable editable)
-						{
-						}
 					}
-				);
+
+					@Override
+					public void afterTextChanged (Editable editable)
+					{
+					}
+				}
+			);
 
 			txtBase64.addTextChangedListener
-				(
-					new TextWatcher ()
+			(
+				new TextWatcher ()
+				{
+					@Override
+					public void beforeTextChanged (CharSequence charSequence, int i, int i2, int i3)
 					{
-						@Override
-						public void beforeTextChanged (CharSequence charSequence, int i, int i2, int i3)
-						{
-							txtPlain.setError (null);
-							txtBase64.setError (null);
-						}
+						txtPlain.setError (null);
+						txtBase64.setError (null);
+					}
 
-						@Override
-						public void onTextChanged (CharSequence charSequence, int i, int i2, int i3)
+					@Override
+					public void onTextChanged (CharSequence charSequence, int start, int before, int count)
+					{
+						if (txtBase64.hasFocus ())
 						{
-							if (txtBase64.hasFocus ())
+							try
 							{
-								try
+								String str = charSequence.toString ();
+								if (str.contains ("\n") || str.contains ("\r") || str.contains (" "))
 								{
-									String decoded = MainActivity.decode(charSequence.toString());
-									txtPlain.setText(decoded);
+									String noNewlines = str.replace ("\n", "").replace ("\r", "").replace (" ", "");
+									txtBase64.setText (noNewlines);
+									txtBase64.setSelection (start >= noNewlines.length () ? noNewlines.length (): start);
+									
+									return;
 								}
-								catch (IllegalArgumentException ex)
-								{
-									txtBase64.setError (getString (R.string.invalidBase64));
-								}
+								
+								String decoded = MainActivity.decode (str);
+								txtPlain.setText (decoded);
+							}
+							catch (IllegalArgumentException ex)
+							{
+								txtBase64.setError (getString (R.string.invalidBase64));
 							}
 						}
-
-						@Override
-						public void afterTextChanged (Editable editable)
-						{
-						}
 					}
-				);
+
+					@Override
+					public void afterTextChanged (Editable editable)
+					{
+					}
+				}
+			);
 
 			return rootView;
 		}
