@@ -10,6 +10,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +20,10 @@
         <activity
             android:name=".About"
             android:label="@string/title_activity_about"
+            android:exported="false"
             android:parentActivityName=".MainActivity" >
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
+                android:name="androidx.core.app.PARENT_ACTIVITY"
                 android:value="be.robinj.base64.MainActivity" />
         </activity>
     </application>
