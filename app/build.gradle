@@ -31,6 +31,18 @@ android {
     }
 }
 
+// Force all Kotlin stdlib artifacts to a consistent version so the
+// kotlin-stdlib-jdk7/jdk8 modules (merged into stdlib since Kotlin 1.8)
+// don't produce duplicate-class errors at packaging time.
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        if (details.requested.group == 'org.jetbrains.kotlin'
+                && details.requested.name.startsWith('kotlin-stdlib')) {
+            details.useVersion '1.9.23'
+        }
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.7.0'
