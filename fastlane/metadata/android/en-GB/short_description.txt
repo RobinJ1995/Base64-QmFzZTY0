@@ -1,0 +1,1 @@
+Encode and decode Base64 instantly as you type. Offline, no ads, no fuss.

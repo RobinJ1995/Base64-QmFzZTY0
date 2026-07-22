@@ -1,0 +1,12 @@
+Base64 ⇄ QmFzZTY0 is a tiny, no-nonsense tool for encoding and decoding Base64 right on your phone.
+
+Type into the top field and the Base64 encoding appears instantly below. Type or paste a Base64 string into the bottom field and it is decoded straight back into plain text. Everything happens live as you type — there are no buttons to press and nothing to wait for.
+
+Features:
+• Live, two-way conversion — encode and decode as you type
+• Completely offline — your text never leaves your device
+• No ads, no tracking and no permissions
+• Clean, distraction-free interface
+• Tiny download
+
+Whether you are a developer decoding a token, a student learning how Base64 works, or you simply need to read an encoded snippet, this app does one job and does it well.

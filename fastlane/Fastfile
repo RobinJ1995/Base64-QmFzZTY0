@@ -1,0 +1,20 @@
+default_platform(:android)
+
+platform :android do
+  desc "Regenerate the Play Store screenshots (emulator-free, via Robolectric native graphics)"
+  lane :screenshots do
+    # Renders the real activities to PNGs straight into
+    # fastlane/metadata/android/en-GB/images/phoneScreenshots/. No emulator required.
+    gradle(task: "generateScreenshots", flags: "-Pscreenshots")
+  end
+
+  desc "Upload the store listing text and screenshots to Google Play (metadata only)"
+  desc "Requires a service-account key — set json_key_file in the Appfile first."
+  lane :upload_metadata do
+    upload_to_play_store(
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_changelogs: true
+    )
+  end
+end

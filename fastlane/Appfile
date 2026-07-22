@@ -1,0 +1,7 @@
+package_name("be.robinj.base64")
+
+# Path to a Google Play service-account JSON key, needed only to upload metadata
+# and screenshots with the `upload_metadata` lane. Left blank on purpose — no
+# credentials are committed. Set the JSON path (or the SUPPLY_JSON_KEY env var)
+# before running that lane.
+json_key_file("")

@@ -92,6 +92,30 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }
 
+// --- App-store screenshot generation (emulator-free, via Robolectric native graphics) ---
+// Run:  gradle generateScreenshots -Pscreenshots
+// PNGs are written straight into the fastlane metadata tree.
+def screenshotOutputDir = "$rootDir/fastlane/metadata/android/en-GB/images/phoneScreenshots"
+
+tasks.withType(Test).configureEach {
+    if (project.hasProperty('screenshots')) {
+        systemProperty 'screenshots', 'true'
+        systemProperty 'screenshot.output.dir', screenshotOutputDir
+        // Always re-render when explicitly requested, and only run the renderer.
+        outputs.upToDateWhen { false }
+        filter { includeTestsMatching '*ScreenshotTest' }
+    }
+}
+
+tasks.register('generateScreenshots') {
+    group = 'reporting'
+    description = 'Renders Play Store screenshots into the fastlane metadata tree (run with -Pscreenshots).'
+    dependsOn 'testDebugUnitTest'
+    doLast {
+        logger.lifecycle("Screenshots written to ${screenshotOutputDir}")
+    }
+}
+
 tasks.register('jacocoTestReport', JacocoReport) {
     dependsOn 'testDebugUnitTest'
 

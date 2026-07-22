@@ -1,0 +1,12 @@
+Base64 ⇄ QmFzZTY0 is een piepklein, doeltreffend hulpmiddel om Base64 rechtstreeks op je telefoon te coderen en te decoderen.
+
+Typ in het bovenste veld en de Base64-codering verschijnt meteen daaronder. Typ of plak een Base64-tekst in het onderste veld en die wordt net zo snel weer omgezet naar gewone tekst. Alles gebeurt live terwijl je typt — geen knoppen en geen wachten.
+
+Kenmerken:
+• Live conversie in twee richtingen — coderen en decoderen terwijl je typt
+• Volledig offline — je tekst verlaat je toestel nooit
+• Geen reclame, geen tracking en geen rechten
+• Overzichtelijke, afleidingsvrije interface
+• Kleine download
+
+Of je nu ontwikkelaar bent, student, of gewoon een gecodeerd stukje tekst wilt lezen: deze app doet één ding en doet dat goed.
