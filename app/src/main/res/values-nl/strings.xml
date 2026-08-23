@@ -6,5 +6,6 @@
 	<string name="invalidInput">Ongeldige invoer</string>
 	<string name="invalidBase64">Ongeldige Base64-invoer</string>
 	<string name="title_activity_about">Over</string>
+	<string name="dev">Ontwikkelaar</string>
 
 </resources>

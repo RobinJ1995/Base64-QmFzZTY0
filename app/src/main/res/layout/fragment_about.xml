@@ -68,7 +68,7 @@
 		style="?android:attr/buttonStyleSmall"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="Developer"
+		android:text="@string/dev"
 		android:layout_below="@+id/version"
 		android:layout_centerHorizontal="true"
 		android:id="@+id/dev"
