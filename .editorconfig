@@ -1,0 +1,27 @@
+root = true
+
+[*]
+end_of_line = lf
+indent_style = tab
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = false
+
+[*.gradle]
+indent_style = space
+
+[{*.yml,*.yaml,gradlew}]
+indent_style = space
+indent_size = 2
+
+[.idea/**]
+indent_style = space
+indent_size = 2
+insert_final_newline = unset
+
+[*.md]
+end_of_line = unset
+indent_style = unset
+indent_size = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset

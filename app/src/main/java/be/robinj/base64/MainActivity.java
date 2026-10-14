@@ -50,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId ();
 
-		if (id == R.id.action_about)
-		{
+		if (id == R.id.action_about) {
 			Intent intent = new Intent (this, About.class);
 			this.startActivity (intent);
 
@@ -67,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
 	 */
 	public static void revealStatusBarBackground (View content)
 	{
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM)
+		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) {
 			return;
+		}
 
 		ViewCompat.setOnApplyWindowInsetsListener
 		(
@@ -126,8 +126,7 @@ public class MainActivity extends AppCompatActivity {
 					@Override
 					public void onTextChanged (CharSequence charSequence, int i, int i2, int i3)
 					{
-						if (txtPlain.hasFocus ())
-						{
+						if (txtPlain.hasFocus ()) {
 							try
 							{
 								String encoded = MainActivity.encode (charSequence.toString ());
@@ -161,13 +160,11 @@ public class MainActivity extends AppCompatActivity {
 					@Override
 					public void onTextChanged (CharSequence charSequence, int start, int before, int count)
 					{
-						if (txtBase64.hasFocus ())
-						{
+						if (txtBase64.hasFocus ()) {
 							try
 							{
 								String str = charSequence.toString ();
-								if (str.contains ("\n") || str.contains ("\r") || str.contains (" "))
-								{
+								if (str.contains ("\n") || str.contains ("\r") || str.contains (" ")) {
 									String noNewlines = str.replace ("\n", "").replace ("\r", "").replace (" ", "");
 									txtBase64.setText (noNewlines);
 									txtBase64.setSelection (start >= noNewlines.length () ? noNewlines.length (): start);

@@ -1,4 +1,4 @@
 <menu
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="be.robinj.base64.About">
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="be.robinj.base64.About">
 </menu>
