@@ -15,12 +15,12 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace 'be.robinj.base64'
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         applicationId "be.robinj.base64"
         minSdk 21
-        targetSdk 35
+        targetSdk 36
         versionCode 7
         versionName "1.4.0"
     }
