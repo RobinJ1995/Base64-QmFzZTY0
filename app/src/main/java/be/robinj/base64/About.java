@@ -20,6 +20,7 @@ public class About extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
+		MainActivity.revealStatusBarBackground (this.findViewById (R.id.container));
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()

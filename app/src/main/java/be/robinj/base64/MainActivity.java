@@ -1,7 +1,11 @@
 package be.robinj.base64;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView (R.layout.activity_main);
+		MainActivity.revealStatusBarBackground (this.findViewById (R.id.container));
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
@@ -54,6 +59,30 @@ public class MainActivity extends AppCompatActivity {
 		}
 
 		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * Keeps the content out from under the transparent status bar that
+	 * edge-to-edge forces on API 35+, so the dark window background shows there.
+	 */
+	public static void revealStatusBarBackground (View content)
+	{
+		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM)
+			return;
+
+		ViewCompat.setOnApplyWindowInsetsListener
+		(
+			content,
+			(view, windowInsets) ->
+			{
+				Insets insets = windowInsets.getInsets (WindowInsetsCompat.Type.statusBars ());
+				ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams ();
+				params.topMargin = insets.top;
+				view.setLayoutParams (params);
+
+				return windowInsets;
+			}
+		);
 	}
 
 	public static String encode (String str)

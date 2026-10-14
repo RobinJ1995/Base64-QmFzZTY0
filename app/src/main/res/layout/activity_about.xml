@@ -3,5 +3,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
     tools:context="be.robinj.base64.About"
     tools:ignore="MergeRootFrame" />
